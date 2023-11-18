@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Product Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Add New Product</h2>
+    <form action="/save-product" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="unit">Unit:</label>
+            <input type="text" class="form-control" id="unit" name="unit" required>
+        </div>
+        <div class="form-group">
+            <label for="manufacturer">Manufacturer:</label>
+            <input type="text" class="form-control" id="manufacturer" name="manufacturer" required>
+        </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select class="form-control" id="status" name="status" required>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Product</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS and dependencies (optional) -->
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<link href="css/styles1.css" rel="stylesheet" />
+</html>

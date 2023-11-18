@@ -21,6 +21,11 @@ public class ProductController {
     private ProductServices productServices;
     @Autowired
     private ProductRepository productRepository;
+    @GetMapping("/admin")
+    public String showAdminUI(){
+        return "admin/manager.html";
+    }
+
 
     @GetMapping("/products")
     public String showCandidateListPaging(Model model,
@@ -29,12 +34,12 @@ public class ProductController {
         int currentPage = page.orElse(1);
         int pageSize = size.orElse(10);
 
-        Page<Product> candidatePage = productServices.findPaginated(currentPage - 1,
+        Page<Product> productPage = productServices.findPaginated(currentPage - 1,
                 pageSize, "name", "asc");
 
-        model.addAttribute("productPage", candidatePage);
+        model.addAttribute("productPage", productPage);
 
-        int totalPages = candidatePage.getTotalPages();
+        int totalPages = productPage.getTotalPages();
         if (totalPages > 0) {
             List<Integer> pageNumbers = IntStream.rangeClosed(1, totalPages)
                     .boxed()
@@ -43,11 +48,12 @@ public class ProductController {
         }
         return "admin/product/listProduct.html";
     }
+
     @GetMapping("/show-add-form")
     public String add(Model model) {
         Product product =new Product();
         model.addAttribute("product",product);
-        return "admin/product/add-form";
+        return "admin/product/addProductForm";
     }
 //    @PostMapping("/products/add")
 //    public String addCandidate(
@@ -64,5 +70,13 @@ public class ProductController {
         productRepository.delete(product);
         return "redirect:/products";
     }
+    // sửa product
+    @GetMapping("/products/edit/{id}")
+    public String showUpdateForm(@PathVariable("id") long id, Model model) {
+        Product product = productRepository.findById(id).orElse(new Product());
+        model.addAttribute("product", product);
+        return "admin/product/updateProductForm.html";
+    }
+
 
 }

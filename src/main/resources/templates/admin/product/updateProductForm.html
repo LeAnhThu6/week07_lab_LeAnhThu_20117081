@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!---->
+<div>
+    <form action="/update-product" method="post">
+        <input type="hidden" name="id" th:value="${product.product_id}">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" th:value="${product.name}">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="3" th:text="${product.description}"></textarea>
+        </div>
+        <div>
+            <label for="unit">Unit:</label>
+            <input type="text" id="unit" name="unit" th:value="${product.unit}">
+        </div>
+        <div>
+            <label for="manufacturer">Manufacturer:</label>
+            <input type="text" id="manufacturer" name="manufacturer" th:value="${product.manufacturer}">
+        </div>
+        <div>
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="Active" th:selected="${product.status == 'Active'}">Active</option>
+                <option value="Inactive" th:selected="${product.status == 'Inactive'}">Inactive</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Update Product</button>
+        </div>
+    </form>
+
+</div>
+
+
+</body>
+</html>
