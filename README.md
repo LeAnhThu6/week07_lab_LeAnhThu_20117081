@@ -29,6 +29,3 @@ Bài tập WWW lab week 07
 - Clone dự án
 - Chạy file [Week07LabLeAnhThu20117081Application](https://github.com/LeAnhThu6/week01_lab_LeAnhThu_20117081/blob/master/data/week01_db_script.sql) để tạo database và chạy chương trình
 - Xem tại http://localhost:8080
-
-## Một số giao diện 
-
