@@ -32,7 +32,8 @@
             <td th:text="${product.unit}"></td>
             <td th:text="${product.manufacturer}"></td>
             <td th:text="${product.status}"></td>
-            <td><a class="btn btn-primary" th:href="@{products/show-edit-form/{id}(id=${product.product_id})}">Edit</a></td>
+            <td><a class="btn btn-primary" th:href="@{products/update-product/{id}(id=${product.product_id})}">Edit</a>
+            </td>
             <td><a class="btn btn-danger" th:href="@{products/delete/{id}(id=${product.product_id})}">Delete</a></td>
         </tr>
         </tbody>

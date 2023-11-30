@@ -71,7 +71,7 @@ public class ProductController {
         return "redirect:/products";
     }
     // sửa product
-    @GetMapping("/products/edit/{id}")
+    @GetMapping("/products/update-product/{id}")
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
         Product product = productRepository.findById(id).orElse(new Product());
         model.addAttribute("product", product);

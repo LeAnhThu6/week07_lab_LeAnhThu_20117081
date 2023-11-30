@@ -7,8 +7,8 @@
 <body>
 <!---->
 <div>
-    <form action="/update-product" method="post">
-        <input type="hidden" name="id" th:value="${product.product_id}">
+    <form action="/update-product/{id}" method="post">
+    <input type="hidden" name="id" th:value="${product.product_id}">
         <div>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" th:value="${product.name}">
